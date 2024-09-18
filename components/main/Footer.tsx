@@ -127,7 +127,7 @@ const Footer = () => {
               href="#"
               className="flex flex-row items-center my-[15px] cursor-pointer"
             >
-              <span className="text-[15px] ml-[6px]">Let's connect</span>
+              <span className="text-[15px] ml-[6px]">Let us connect</span>
             </a>
           </div>
         </div>
