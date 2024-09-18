@@ -2,11 +2,11 @@
 
 import React, { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload } from "@react-three/drei";
+import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random";
 
 const StarBackground = (props: any) => {
-  const ref = useRef<any>(null); // Ensure ref is initialized properly
+  const ref = useRef<any>(null);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
