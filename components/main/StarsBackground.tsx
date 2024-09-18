@@ -2,62 +2,45 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+
 const createStar = (id: number) => {
   const size = Math.random() * 2 + 0.5;
   const x = Math.random() * 100;
   const y = Math.random() * 100;
   const duration = Math.random() * 10 + 5;
-  return { id, size, x, y, duration };
+  const animation = `
+    @keyframes move-${id} {
+      0% { transform: translate(${Math.random() * 50 - 25}%, ${Math.random() * 50 - 25}%); }
+      50% { transform: translate(${Math.random() * 50 - 25}%, ${Math.random() * 50 - 25}%); }
+      100% { transform: translate(${Math.random() * 50 - 25}%, ${Math.random() * 50 - 25}%); }
+    }
+  `;
+  return { id, size, x, y, duration, animation };
 };
 
 const StarsBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [stars, setStars] = useState<
-    Array<{ id: number; size: number; x: number; y: number; duration: number }>
-  >([]);
+  const [stars, setStars] = useState<Array<{ id: number; size: number; x: number; y: number; duration: number; animation: string }>>([]);
 
   useEffect(() => {
+   
     const numStars = 100;
-    const initialStars = Array.from({ length: numStars }, (_, i) =>
-      createStar(i)
-    );
+    const initialStars = Array.from({ length: numStars }, (_, i) => createStar(i));
     setStars(initialStars);
 
-    const keyframes = `
-      @keyframes twinkle {
-        0% { opacity: 0.5; }
-        50% { opacity: 1; }
-        100% { opacity: 0.5; }
-      }
-    `;
-    const styleSheet = document.createElement("style");
-    styleSheet.type = "text/css";
-    styleSheet.innerText = keyframes;
-    document.head.appendChild(styleSheet);
+ 
+    initialStars.forEach(star => {
+      const styleSheet = document.createElement("style");
+      styleSheet.type = "text/css";
+      styleSheet.innerText = star.animation;
+      document.head.appendChild(styleSheet);
+    });
 
     return () => {
-      document.head.removeChild(styleSheet);
+      
+      document.head.querySelectorAll('style').forEach(style => style.remove());
     };
   }, []);
-
-  useEffect(() => {
-    const animateStars = () => {
-      if (containerRef.current) {
-        const updatedStars = stars.map((star) => {
-          const size = Math.random() * 2 + 0.5;
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const duration = Math.random() * 10 + 5;
-          return { ...star, size, x, y, duration };
-        });
-        setStars(updatedStars);
-      }
-    };
-
-    const intervalId = setInterval(animateStars, 1000);
-
-    return () => clearInterval(intervalId);
-  }, [stars]);
 
   const containerStyle: React.CSSProperties = {
     position: "fixed",
@@ -65,14 +48,14 @@ const StarsBackground = () => {
     left: 0,
     width: "100vw",
     height: "100vh",
-    zIndex: 10,
+    zIndex: 10, 
     overflow: "hidden",
     pointerEvents: "none",
   };
 
   return (
     <div ref={containerRef} style={containerStyle}>
-      {stars.map((star) => (
+      {stars.map(star => (
         <div
           key={star.id}
           style={{
@@ -85,7 +68,7 @@ const StarsBackground = () => {
             left: `${star.x}%`,
             top: `${star.y}%`,
             transform: "translate(-50%, -50%)",
-            animation: `twinkle ${star.duration}s infinite`,
+            animation: `move-${star.id} ${star.duration}s infinite alternate`,
           }}
         />
       ))}
@@ -94,3 +77,4 @@ const StarsBackground = () => {
 };
 
 export default StarsBackground;
+
