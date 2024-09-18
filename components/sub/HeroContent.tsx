@@ -15,7 +15,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-15 mt-40 w-full z-[20]"
+      className="flex flex-row items-center justify-center px-18 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 items-center justify-center m-auto">
         <motion.div
@@ -69,7 +69,7 @@ const HeroContent = () => {
           alt="work icons"
           height={650}
           width={650}
-          className="object-contain"
+          className="object-contain hidden md:flex"
         />
       </motion.div>
     </motion.div>
