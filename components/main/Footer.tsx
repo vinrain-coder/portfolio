@@ -91,7 +91,11 @@ const Footer = () => {
             <button
               onClick={handleCopyEmail}
               className={`relative flex flex-row items-center my-3 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ease-in-out 
-              ${copied ? 'bg-gradient-to-r from-green-400 to-green-600 text-white' : 'bg-gradient-to-r from-blue-400 to-purple-600 text-white'}
+              ${
+                copied
+                  ? "bg-gradient-to-r from-green-400 to-green-600 text-white"
+                  : "bg-gradient-to-r from-blue-400 to-purple-600 text-white"
+              }
               hover:shadow-lg hover:scale-105 focus:outline-none`}
             >
               {copied ? (
@@ -101,7 +105,7 @@ const Footer = () => {
               )}
               <div
                 className={`absolute inset-0 rounded-lg opacity-50 pointer-events-none 
-                ${copied ? 'bg-green-500 animate-ping' : ''}`}
+                ${copied ? "bg-green-500 animate-ping" : ""}`}
               />
             </button>
 
@@ -115,7 +119,7 @@ const Footer = () => {
               href="#"
               className="flex flex-row items-center my-3 cursor-pointer"
             >
-              <span className="ml-2">Let us connect</span>
+              <span className="ml-2">Let&apos;s connect</span>
             </a>
           </div>
         </div>

@@ -62,12 +62,18 @@ const HeroContent = () => {
         </motion.p>
 
         <motion.button
-          variants={slideInFromLeft(1)}
           onClick={handleCopyEmail}
-          className={`py-2 px-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-center text-white rounded-lg max-w-[200px] transition-all duration-300 ease-in-out 
-            ${copied ? 'bg-green-500' : ''}`}
+          variants={slideInFromLeft(1)}
+          className={`relative py-2 px-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-center text-white rounded-lg max-w-[200px] font-semibold transition-all duration-300 ease-in-out
+            ${copied ? "bg-gradient-to-r from-green-400 to-green-600" : ""}
+            hover:shadow-lg hover:scale-105 focus:outline-none`}
         >
           {copied ? "Copied!" : "Copy Email"}
+          <div
+            className={`absolute inset-0 rounded-lg opacity-50 pointer-events-none ${
+              copied ? "bg-green-500 animate-ping" : ""
+            }`}
+          />
         </motion.button>
       </div>
 
@@ -88,4 +94,3 @@ const HeroContent = () => {
 };
 
 export default HeroContent;
-

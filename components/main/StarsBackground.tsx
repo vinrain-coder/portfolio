@@ -7,7 +7,7 @@ const createStar = (id: number) => {
   const x = Math.random() * 100;
   const y = Math.random() * 100;
   const duration = Math.random() * 10 + 5;
-  
+
   const randomOffset = () => Math.random() * 100 - 50;
 
   const animation = `
@@ -25,14 +25,25 @@ const createStar = (id: number) => {
 
 const StarsBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [stars, setStars] = useState<Array<{ id: number; size: number; x: number; y: number; duration: number; animation: string }>>([]);
+  const [stars, setStars] = useState<
+    Array<{
+      id: number;
+      size: number;
+      x: number;
+      y: number;
+      duration: number;
+      animation: string;
+    }>
+  >([]);
 
   useEffect(() => {
     const numStars = 100;
-    const initialStars = Array.from({ length: numStars }, (_, i) => createStar(i));
+    const initialStars = Array.from({ length: numStars }, (_, i) =>
+      createStar(i)
+    );
     setStars(initialStars);
 
-    initialStars.forEach(star => {
+    initialStars.forEach((star) => {
       const styleSheet = document.createElement("style");
       styleSheet.type = "text/css";
       styleSheet.innerText = star.animation;
@@ -40,7 +51,9 @@ const StarsBackground = () => {
     });
 
     return () => {
-      document.head.querySelectorAll('style').forEach(style => style.remove());
+      document.head
+        .querySelectorAll("style")
+        .forEach((style) => style.remove());
     };
   }, []);
 
@@ -57,7 +70,7 @@ const StarsBackground = () => {
 
   return (
     <div ref={containerRef} style={containerStyle}>
-      {stars.map(star => (
+      {stars.map((star) => (
         <div
           key={star.id}
           style={{
@@ -79,5 +92,3 @@ const StarsBackground = () => {
 };
 
 export default StarsBackground;
-
-
