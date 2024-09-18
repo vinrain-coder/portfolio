@@ -30,12 +30,12 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-5 text-6xl font-bold text-white max-w-[600px] w-full h-auto"
+          className="flex flex-col text-center gap-6 mt-5 text-6xl font-bold text-white max-w-[600px] w-full h-auto"
         >
           
           <span className="text-center text-3xl md:text-4xl sm:text-left">
             Developing
-            <span className="text-center sm:text-left text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
               user-friendly{" "}
             </span>

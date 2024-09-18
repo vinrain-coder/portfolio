@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">Social Media</div>
+            <div className="font-bold text-[16px] mt-2">Social Media</div>
 
             
 
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
 
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">About</div>
+            <div className="font-bold text-[16px] mt-2">About</div>
 
             {/* Email Copy */}
             <div
@@ -109,7 +109,7 @@ const Footer = () => {
             >
               <span className="text-[15px] ml-[6px]">
                 {copied ? (
-                  <span className="animate-bounce text-green-500">Copied!</span>
+                  <span className="animate-bounce text-green-500 font-semibold">Copied!</span>
                 ) : (
                   "Copy email"
                 )}

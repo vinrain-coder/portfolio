@@ -23,22 +23,22 @@ const Navbar = () => {
           </span>
         </a>
 
-        {/* Social Icons - Centered on small screens */}
+       
         <div className="flex flex-row gap-2 justify-center md:justify-end sm:order-last sm:mr-4">
           {Socials.map((social) => (
             <a href={social.href} key={social.name} target="_blank" rel="noopener noreferrer">
               <Image
                 src={social.src}
                 alt={social.name}
-                width={20} // Smaller on small screens
+                width={20} 
                 height={20}
-                className="sm:w-[24px] sm:h-[24px] text-gray-200" // Larger on medium and above
+                className="sm:w-[24px] sm:h-[24px] text-gray-200" 
               />
             </a>
           ))}
         </div>
 
-        {/* Hamburger menu for mobile - Moved to the right on small screens */}
+        
         <div className="md:hidden flex items-center justify-end">
           <button
             className="text-gray-300 focus:outline-none"
@@ -82,9 +82,9 @@ const Navbar = () => {
         <div
           className={`${
             isNavOpen ? "block" : "hidden"
-          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200 bg-slate-500 z-10`}
+          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
         >
-          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full">
+          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-[#2A0E61]/10">
             <a
               href="#about-me"
               className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
