@@ -14,8 +14,8 @@ const Navbar = () => {
           <Image
             src="/NavLogo.png"
             alt="logo"
-            width={45}
-            height={45}
+            width={40}
+            height={40}
             className="cursor-pointer hover:animate-slowspin sm:w-[70px] sm:h-[70px]"
           />
           <span className="font-bold text-2xl ml-[10px] hidden md:block text-gray-300">
@@ -80,34 +80,35 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div
-          className={`${
-            isNavOpen ? "block bg-purple-600" : "hidden"
-          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
-        >
-          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-purple-600 md:bg-transparent">
-            <a
-              href="#about-me"
-              className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
-              onClick={() => setIsNavOpen(false)}
-            >
-              About me
-            </a>
-            <a
-              href="#skills"
-              className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
-              onClick={() => setIsNavOpen(false)}
-            >
-              Projects
-            </a>
-          </div>
-        </div>
+  className={`${
+    isNavOpen ? "block" : "hidden"
+  } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
+>
+  <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-purple-600 md:bg-transparent">
+    <a
+      href="#about-me"
+      className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
+      onClick={() => setIsNavOpen(false)}
+    >
+      About me
+    </a>
+    <a
+      href="#skills"
+      className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
+      onClick={() => setIsNavOpen(false)}
+    >
+      Skills
+    </a>
+    <a
+      href="#projects"
+      className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-lg transition duration-300 ease-in-out"
+      onClick={() => setIsNavOpen(false)}
+    >
+      Projects
+    </a>
+  </div>
+</div>
+
       </div>
     </div>
   );

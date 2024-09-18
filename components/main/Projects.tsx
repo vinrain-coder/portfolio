@@ -17,19 +17,19 @@ const Projects = () => {
           src="/NextWebsite.png"
           title="E-commerce Platform"
           description="Created a robust e-commerce platform with a dynamic product catalog, secure payments, and a mobile-friendly design for enhanced shopping experiences."
-          url="https://example-ecommerce.com"
+          url="#"
         />
         <ProjectCard
           src="/CardImage.png"
           title="Blog Website"
           description="Developed a vibrant blog platform with intuitive navigation, customizable layouts, and SEO optimization for engaging content delivery."
-          url="https://example-blog.com"
+          url="#"
         />
         <ProjectCard
           src="/SpaceWebsite.png"
           title="E-learning Platform"
           description="Designed an interactive e-learning portal featuring multimedia support, progress tracking, and user-friendly course management for seamless online education."
-          url="https://example-elearning.com"
+          url="#"
         />
       </div>
     </div>
