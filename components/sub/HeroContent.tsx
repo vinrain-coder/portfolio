@@ -30,7 +30,7 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-5 text-6xl font-bold text-white max-w-[600px] w-full h-auto"
         >
           
           <span className="text-center text-3xl md:text-4xl sm:text-left">
@@ -45,7 +45,7 @@ const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px] text-center sm:text-left"
+          className="text-lg text-gray-400 my-5 max-w-[600px] w-full text-center sm:text-left"
         >
           I&apos;m a Full Stack Website Developer capable of building scalable,
           responsive, and efficient web applications. Check out my projects and

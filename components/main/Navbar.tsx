@@ -82,7 +82,7 @@ const Navbar = () => {
         <div
           className={`${
             isNavOpen ? "block" : "hidden"
-          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
+          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200 bg-slate-500 z-10`}
         >
           <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full">
             <a
