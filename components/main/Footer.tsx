@@ -62,8 +62,8 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px] mt-2">Social Media</div>
+          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start mt-2">
+            <div className="font-bold text-[16px">Social Media</div>
 
             
 
@@ -99,8 +99,8 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px] mt-2">About</div>
+          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start mt-2">
+            <div className="font-bold text-[16px]">About</div>
 
             {/* Email Copy */}
             <div
