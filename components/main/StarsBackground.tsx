@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const StarsBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [stars, setStars] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
     const numStars = 100; // Number of stars
-    const stars = [];
+    const generatedStars = [];
 
     for (let i = 0; i < numStars; i++) {
       const size = Math.random() * 2 + 0.5;
@@ -18,7 +16,7 @@ const StarsBackground = () => {
       const y = Math.random() * 100;
       const duration = Math.random() * 10 + 5;
 
-      stars.push(
+      generatedStars.push(
         <div
           key={i}
           style={{
@@ -36,6 +34,8 @@ const StarsBackground = () => {
         />
       );
     }
+
+    setStars(generatedStars);
 
     const keyframes = `
       @keyframes twinkle {
@@ -68,9 +68,10 @@ const StarsBackground = () => {
 
   return (
     <div ref={containerRef} style={containerStyle}>
-      {/* Stars are added here */}
+      {stars}
     </div>
   );
 };
 
 export default StarsBackground;
+

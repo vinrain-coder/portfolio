@@ -5,7 +5,6 @@ import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import StarsBackground from "@/components/main/StarsBackground";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,14 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#030014] overflow-x-hidden relative`}>
-        
+      <body
+        className={`${inter.className} bg-[#030014] overflow-x-hidden relative`}
+      >
         <StarsBackground />
         <div className="relative z-10">
           <Navbar />
-          <main className="w-full max-w-full">
-            {children}
-          </main>
+          <main className="w-full max-w-full">{children}</main>
           <Footer />
         </div>
       </body>
