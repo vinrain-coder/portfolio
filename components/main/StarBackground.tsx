@@ -3,6 +3,7 @@
 import React, { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
+// @ts-ignore
 import * as random from "maath/random";
 
 const StarBackground = (props: any) => {
