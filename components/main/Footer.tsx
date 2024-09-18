@@ -6,7 +6,6 @@ import {
   RxInstagramLogo,
   RxLinkedinLogo,
 } from "react-icons/rx";
-
 import { FaYoutube, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
@@ -17,122 +16,111 @@ const Footer = () => {
     navigator.clipboard.writeText("vinrain450@gmail.com");
     setCopied(true);
     setTimeout(() => {
-      setCopied(false); // Reset animation after 2 seconds
-    }, 2000);
+      setCopied(false);
+    }, 5000);
   };
 
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
+    <div className="w-full bg-transparent text-gray-200 shadow-lg p-6">
       <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">Community</div>
-
-            {/* YouTube */}
+        <div className="w-full flex flex-col sm:flex-row items-center justify-around flex-wrap">
+          <div className="min-w-[200px] flex flex-col items-center mb-6 sm:mb-0">
+            <div className="font-bold text-lg">Community</div>
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <FaYoutube />
-              <span className="text-[15px] ml-[6px]">YouTube</span>
+              <span className="ml-2">YouTube</span>
             </a>
-
-            {/* GitHub */}
             <a
               href="https://github.com/vinrain-coder"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <RxGithubLogo />
-              <span className="text-[15px] ml-[6px]">GitHub</span>
+              <span className="ml-2">GitHub</span>
             </a>
-
-            {/* Discord */}
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <RxDiscordLogo />
-              <span className="text-[15px] ml-[6px]">Discord</span>
+              <span className="ml-2">Discord</span>
             </a>
           </div>
 
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start mt-2">
-            <div className="font-bold text-[16px">Social Media</div>
-
-            
-
-            {/* Instagram */}
+          <div className="min-w-[200px] flex flex-col items-center mb-6 sm:mb-0">
+            <div className="font-bold text-lg">Social Media</div>
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <RxInstagramLogo />
-              <span className="text-[15px] ml-[6px]">Instagram</span>
+              <span className="ml-2">Instagram</span>
             </a>
-            {/* Facebook */}
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <FaFacebook />
-              <span className="text-[15px] ml-[6px]">Facebook</span>
+              <span className="ml-2">Facebook</span>
             </a>
-            {/* Facebook */}
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
               <RxLinkedinLogo />
-              <span className="text-[15px] ml-[6px]">LinkedIn</span>
+              <span className="ml-2">LinkedIn</span>
             </a>
           </div>
 
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start mt-2">
-            <div className="font-bold text-[16px]">About</div>
-
-            {/* Email Copy */}
-            <div
+          <div className="min-w-[200px] flex flex-col items-center mb-6 sm:mb-0">
+            <div className="font-bold text-lg">About</div>
+            <button
               onClick={handleCopyEmail}
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className={`relative flex flex-row items-center my-3 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ease-in-out 
+              ${copied ? 'bg-gradient-to-r from-green-400 to-green-600 text-white' : 'bg-gradient-to-r from-blue-400 to-purple-600 text-white'}
+              hover:shadow-lg hover:scale-105 focus:outline-none`}
             >
-              <span className="text-[15px] ml-[6px]">
-                {copied ? (
-                  <span className="animate-bounce text-green-500 font-semibold">Copied!</span>
-                ) : (
-                  "Copy email"
-                )}
-              </span>
-            </div>
+              {copied ? (
+                <span className="animate-bounce">Copied!</span>
+              ) : (
+                "Copy email"
+              )}
+              <div
+                className={`absolute inset-0 rounded-lg opacity-50 pointer-events-none 
+                ${copied ? 'bg-green-500 animate-ping' : ''}`}
+              />
+            </button>
 
-            {/* Other Links */}
             <a
               href="#"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
-              <span className="text-[15px] ml-[6px]">Become Sponsor</span>
+              <span className="ml-2">Become Sponsor</span>
             </a>
             <a
               href="#"
-              className="flex flex-row items-center my-[15px] cursor-pointer"
+              className="flex flex-row items-center my-3 cursor-pointer"
             >
-              <span className="text-[15px] ml-[6px]">Let us connect</span>
+              <span className="ml-2">Let us connect</span>
             </a>
           </div>
         </div>
 
-        <div className="mb-[20px] mt-[20px] text-[15px] text-center">
+        <div className="mt-6 text-center">
           <p>&copy; VinRain {currentYear} Inc. All Rights Reserved</p>
         </div>
       </div>

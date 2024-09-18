@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
@@ -11,6 +11,16 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 const HeroContent = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("vinrain450@gmail.com");
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 5000);
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -51,12 +61,14 @@ const HeroContent = () => {
           skills.
         </motion.p>
 
-        <motion.a
+        <motion.button
           variants={slideInFromLeft(1)}
-          className="py-2 px-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-center text-white rounded-lg max-w-[200px]"
+          onClick={handleCopyEmail}
+          className={`py-2 px-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-center text-white rounded-lg max-w-[200px] transition-all duration-300 ease-in-out 
+            ${copied ? 'bg-green-500' : ''}`}
         >
-          Welcome!
-        </motion.a>
+          {copied ? "Copied!" : "Copy Email"}
+        </motion.button>
       </div>
 
       <motion.div
@@ -76,3 +88,4 @@ const HeroContent = () => {
 };
 
 export default HeroContent;
+
