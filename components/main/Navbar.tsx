@@ -86,7 +86,7 @@ const Navbar = () => {
             isNavOpen ? "block" : "hidden"
           } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
         >
-          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-[#272822] md:bg-transparent">
+          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-[#030014] md:bg-transparent">
             <a
               href="#about-me"
               className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-full transition duration-300 ease-in-out"
