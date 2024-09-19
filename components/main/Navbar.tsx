@@ -84,9 +84,10 @@ const Navbar = () => {
         <div
           className={`${
             isNavOpen ? "block" : "hidden"
-          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-full p-2 text-gray-200`}
+          } absolute top-[65px] left-0 w-full transition-all duration-300 ease-in-out transform origin-top md:static md:w-auto md:flex md:items-center md:justify-between rounded-lg p-2 text-gray-200`}
+          style={{ background: 'linear-gradient(145deg, #000000, #434343)', boxShadow: '0 4px 10px rgba(0,0,0,0.3)' }}
         >
-          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg shadow-lg shadow-[#2A0E61]/30 md:rounded-full bg-purple-600 md:bg-transparent">
+          <div className="flex flex-col items-start md:flex-row md:w-[auto] md:h-full md:justify-between rounded-lg bg-[#1f1f1f] md:bg-transparent">
             <a
               href="#about-me"
               className="cursor-pointer py-3 px-6 text-gray-200 md:py-2 md:px-6 hover:text-white hover:shadow-lg hover:shadow-[#2a0e61]/50 rounded-full transition duration-300 ease-in-out"
@@ -116,3 +117,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
